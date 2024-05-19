@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="graphs.css">
+</head>
+<body>
+    <h1>Your saved graphs:</h1>
+    <div class="graphs">
+    <% for (let graph_data of graphs) { %>
+        <div class="graph">
+        <h2><%= graph_data[1]%></h2>
+        <form action="/gotoplot" method="post">
+            <input type="hidden" name="graph_data" id="graph_name" value="<%=graph_data%> ">
+            <button class="view-graph">View Graph</button>
+        </form>
+            <img src="<%= graph_data[0] + graph_data[1] + graph_data[2]  %> " style="width:200px;height:200px;" >
+            <form action="/deletegraph" method="post">
+                <input type="hidden" name="graph_name" id="graph_name" value="<%=graph_data[1]%> ">
+                <button class="delete-graph">Delete this graph</button>
+            </form>
+        </div>
+        <% } %>
+    </div>
+        <br>
+    <form action="/createplot" method="get">
+        <button>Create a new graph</button>
+    </form>
+</body>
+</html>

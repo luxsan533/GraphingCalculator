@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="createplot.css">
+</head>
+    <body>
+        <h1>Graphing Calculator</h1>
+
+    <form class="create-function" action="/createplot" method="post">
+        <label for="xlim">Set x limit to</label>    
+        <input name='xlim' id= 'xlim' type="text">
+    <br>
+        <label for="func">Create function: y = </label>    
+        <input name='func' id= 'func' type="text">
+    <br>
+        <label for="name">Name the graph:</label>    
+        <input name='name' id= 'name' type="text">
+    <br>
+        <button>Submit</button>
+    </form>
+
+    <form action="/graphs" method="get">
+        <button>Go to your saved graphs.</button>
+    </form>
+
+    <form action="/logout" method="get">
+        <button>Logout</button>
+    </form>
+</body>
+</html>

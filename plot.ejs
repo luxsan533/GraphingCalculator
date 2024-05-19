@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plot.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Plot</h1>
+
+    <h2><%= dataToSend[1] %></h2>
+    <h2 id="equation"><%= func %></h2>
+
+    <span>
+        <label for="xvalue">x = </label>
+        <input type="text" id="x_input">
+    </span>
+    <p id="y_value">y =</p>
+
+    <form action="/savegraph" method="post">
+        <input img name = 'graph' type="hidden" value = "<%= dataToSend %>">
+        <img src="<%= dataToSend[0] + dataToSend[1] + dataToSend[2]%>" >
+        <button>Save this graph</button>
+    </form>
+
+</body>
+<script src="yvalue.js"></script>
+</html>
+
+
